@@ -16,10 +16,14 @@ body{
     border: 2px solid black;
     padding: 20px;
 }
+.height-mc {
+    height: 100%;
+}
 
 /* SEZIONE USER  */
 .user-mc{
     background-color:#eaeaea;
+    border-right: 1px solid black;
 }
 img{
     aspect-ratio: 1/1;
@@ -38,8 +42,9 @@ img{
 
 /* SEZIONE NEWS E CAMPANELLA  */
 
-.news-mc{
+.row .news-mc{
     background-color: #8edafc;
+    padding: 15px 0;
 }
 .news-mc i{
     background-color: white;
@@ -83,3 +88,17 @@ img{
     color:#c5ccd8 ;
     font-weight: 500;
 }
+
+
+
+/* SEZIONE UTENTE CHAT SELEZIONATA */
+
+.active-user{
+    background-color:#eaeaea;
+}
+
+.text-active-mess-mc{
+    color:#c5ccd8 ;
+}
+
+
