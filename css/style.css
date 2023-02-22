@@ -22,9 +22,12 @@ body{
     background-color:#eaeaea;
 }
 img{
-    width: 50px;
     aspect-ratio: 1/1;
+    margin: 5px;
+    width: 50px;
     border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 .user-mc  i{
     font-size: 20px;
@@ -45,6 +48,7 @@ img{
     padding: 10px;
     border-radius: 100%;
     margin: 0 10px;
+    aspect-ratio: 1/1;
 }
 .news-mc a{
     font-size: 10px;
@@ -61,4 +65,21 @@ img{
 }
 .search-mc i{
     padding: 10px;
+}
+
+
+/* SEZIONE GRUPPO DI CHAT  */
+.chat-group-mc{
+   background-color: white;
+}
+.chat-active{
+    background-color: #e9ebeb;
+}
+.border-chat-mc{
+    border-top:  1px solid #e9ebeb;
+}
+.text-mess-mc,.time-mess-mc{
+    font-size: 13px;
+    color:#c5ccd8 ;
+    font-weight: 500;
 }
