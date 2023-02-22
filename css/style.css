@@ -9,7 +9,7 @@ body{
     background: linear-gradient(to top,#dadbd3 80%, #009688 20% ) !important;
 }
 .padding-mc{
-    padding: 100px;
+    padding: 40px;
 }
 .debug{
     background: blue;
@@ -62,6 +62,7 @@ img{
 }
 .news-mc a{
     font-size: 10px;
+    color: #4f7589;
 }
 .news-mc h2{
     font-size: 13px;
@@ -103,7 +104,7 @@ img{
 }
 
 .text-active-mess-mc{
-    color:#c5ccd8 ;
+    color:#9a9ba7 ;
 }
 .active-user i{
     font-size: 20px;
@@ -117,6 +118,24 @@ img{
 .bg-mc{
     background-repeat: repeat;
     background-image: url(../img/desktop-wallpaper-i-made-this-neon-edit-of-the-default-backgrounds-for-dark-mode-1125x1952-for-your-mobile-tablet-whatsapp-aesthetic-thumbnail.jpeg);
+}
+.bg-pill-user,
+.bg-pill-other{
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.bg-pill-user{
+    background-color: #d5f9ba;
+}
+.bg-pill-other{
+    background-color: white ;
+}
+.time-mess-chat-mc{
+    font-size: 10px;
+    color:#c5ccd8 ;
+    font-weight: 500;
+    margin: -5px;
 }
 
 
