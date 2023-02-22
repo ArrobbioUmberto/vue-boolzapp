@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top,#dadbd3 80%, #009688 20% ) !important;
+}
+.margin-mc{
+    margin: 5% auto;
+}
+.debug{
+    background: blue;
+    border: 2px solid black;
+}
