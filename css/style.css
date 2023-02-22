@@ -14,4 +14,51 @@ body{
 .debug{
     background: blue;
     border: 2px solid black;
+    padding: 20px;
+}
+
+/* SEZIONE USER  */
+.user-mc{
+    background-color:#eaeaea;
+}
+img{
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+.user-mc  i{
+    font-size: 20px;
+    padding: 10px;
+    color: #b1b1b1;
+}
+
+
+/* SEZIONE NEWS E CAMPANELLA  */
+
+.news-mc{
+    background-color: #8edafc;
+}
+.news-mc i{
+    background-color: white;
+    color:#8edafc;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 100%;
+    margin: 0 10px;
+}
+.news-mc a{
+    font-size: 10px;
+}
+.news-mc h2{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* SEZIONE CERCA  */
+
+.search-mc{
+    background-color: white;
+}
+.search-mc i{
+    padding: 10px;
 }
