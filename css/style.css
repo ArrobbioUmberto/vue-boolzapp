@@ -8,8 +8,8 @@ body{
     height: 100vh;
     background: linear-gradient(to top,#dadbd3 80%, #009688 20% ) !important;
 }
-.margin-mc{
-    margin: 5% auto;
+.padding-mc{
+    padding: 100px;
 }
 .debug{
     background: blue;
@@ -18,6 +18,11 @@ body{
 }
 .height-mc {
     height: 100%;
+}
+.col-8 .height-chat-active,
+.col-4 .height-chat-active,
+.col .height-chat-active {
+    flex: 0 0 0%;
 }
 
 /* SEZIONE USER  */
@@ -100,5 +105,31 @@ img{
 .text-active-mess-mc{
     color:#c5ccd8 ;
 }
+.active-user i{
+    font-size: 20px;
+    padding: 10px;
+    color: #b1b1b1;
+}
+
+
+/* SEZIONE DELLA CHAT  */
+
+.bg-mc{
+    background-repeat: repeat;
+    background-image: url(../img/desktop-wallpaper-i-made-this-neon-edit-of-the-default-backgrounds-for-dark-mode-1125x1952-for-your-mobile-tablet-whatsapp-aesthetic-thumbnail.jpeg);
+}
+
+
+/* SEZIONE PER SCRIVERE  */
+
+.write-mc{
+    background-color: #f3eeea;
+}
+.write-mc i{
+    padding: 10px;
+    color: #6c7274;
+    font-size: 20px;
+}
+
 
 
