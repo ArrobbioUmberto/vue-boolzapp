@@ -24,6 +24,10 @@ body{
 .col .height-chat-active {
     flex: 0 0 0%;
 }
+i{
+    pointer-events: auto;
+    user-select: none;
+}
 
 /* SEZIONE USER  */
 .user-mc{
@@ -82,6 +86,8 @@ img{
 }
 
 
+
+
 /* SEZIONE GRUPPO DI CHAT  */
 .chat-group-mc{
    background-color: white;
@@ -93,9 +99,14 @@ img{
 .border-chat-mc{
     border-top:  1px solid #e9ebeb;
 }
-.text-mess-mc,.time-mess-mc{
+.time-mess-mc{
     font-size: 13px;
     color:#c5ccd8 ;
+    font-weight: 500;
+}
+.text-mess-mc{
+    color: #b1b1b1;
+    font-size: 13px;
     font-weight: 500;
 }
 
@@ -120,13 +131,12 @@ img{
 /* SEZIONE DELLA CHAT  */
 
 .bg-mc{
-    overflow: scroll;
     background-repeat: repeat;
     background-image: url(../img/desktop-wallpaper-i-made-this-neon-edit-of-the-default-backgrounds-for-dark-mode-1125x1952-for-your-mobile-tablet-whatsapp-aesthetic-thumbnail.jpeg);
 }
 .bg-pill-user,
 .bg-pill-other{
-    width: 40%;
+    max-width: 70%;
     padding: 10px;
     border-radius: 10px;
 }
@@ -140,7 +150,9 @@ img{
     font-size: 10px;
     color:#c5ccd8 ;
     font-weight: 500;
-    margin: -5px;
+}
+.margin-chat{
+    margin: 0 10px;
 }
 
 
