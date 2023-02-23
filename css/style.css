@@ -17,7 +17,7 @@ body{
     padding: 20px;
 }
 .height-mc {
-    height: 100%;
+    height: calc(100% - 40px);
 }
 .col-8 .height-chat-active,
 .col-4 .height-chat-active,
@@ -116,6 +116,7 @@ img{
 /* SEZIONE DELLA CHAT  */
 
 .bg-mc{
+    overflow: scroll;
     background-repeat: repeat;
     background-image: url(../img/desktop-wallpaper-i-made-this-neon-edit-of-the-default-backgrounds-for-dark-mode-1125x1952-for-your-mobile-tablet-whatsapp-aesthetic-thumbnail.jpeg);
 }
