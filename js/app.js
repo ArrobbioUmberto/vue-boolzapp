@@ -214,6 +214,67 @@ createApp({
               status: 'received'
             }
           ],
+        },
+        {
+          name: 'Claudia',
+          avatar: './img/Steve_Jobs_Headshot_2010-CROP2.jpeg',
+          visible: true,
+          messages: [
+            {
+              date: '10/01/2020 15:30:55',
+              message: 'Ciao Claudia, hai novità?',
+              status: 'sent'
+            },
+            {
+              date: '10/01/2020 15:50:00',
+              message: 'Non ancora',
+              status: 'received'
+            },
+            {
+              date: '10/01/2020 15:51:00',
+              message: 'Nessuna nuova, buona nuova',
+              status: 'sent'
+            }
+          ],
+        },
+        {
+          name: 'Federico',
+          avatar: './img/gates.jpeg',
+          visible: true,
+          messages: [
+            {
+              date: '10/01/2020 15:30:55',
+              message: 'Fai gli auguri a Martina che è il suo compleanno!',
+              status: 'sent'
+            },
+            {
+              date: '10/01/2020 15:50:00',
+              message: 'Grazie per avermelo ricordato, le scrivo subito!',
+              status: 'received'
+            }
+          ],
+        },
+        {
+          name: 'Davide',
+          avatar: './img/warren-buffett.jpeg',
+          visible: true,
+          messages: [
+            {
+              date: '10/01/2020 15:30:55',
+              message: 'Ciao, andiamo a mangiare la pizza stasera?',
+              status: 'received'
+            },
+            {
+              date: '10/01/2020 15:50:00',
+              message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+              status: 'sent'
+            },
+            {
+              date: '10/01/2020 15:51:00',
+              message: 'OK!!',
+              status: 'received'
+            }
+          ],
         }
       ]
     }
