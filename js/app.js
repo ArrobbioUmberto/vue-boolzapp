@@ -236,13 +236,33 @@ createApp({
       currentUser: 0,
       firstMessage: 0,
       contacts: contacts,
+      inputValue: '',
     }
+   
   },
   methods: {
     setCurrentUser(current){
       this.currentUser = current
       console.log(this.setCurrentUser)
+    },
+    addMessage(){
+      // let chiscrive = this.setCurrentUser
+      let messaggioInserito = this.inputValue.trim()
+      if (messaggioInserito === ''){
+        return
+      }
+      const newMessage = {
+        date: '10/01/2020 16:15:22',
+        message: this.inputValue,
+        status: 'sent',
+      }
+      console.log(newMessage)
+      this.contacts[this.currentUser].messages.push(newMessage)
+      this.inputValue = ''
+      console.log('messaggio inviato:', messaggioInserito)
+      console.log(this.contacts)
     }
-  }
+  },
+ 
 }).mount('#app')
 
