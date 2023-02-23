@@ -43,67 +43,19 @@
                                 aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
-                    <div class="col mb-auto p-0 chat-group-mc d-flex flex-column overflow-y-scroll flex-grow-1">
-                        <div v-for="(elements,index) in contacts" class="col chat-active border-chat-mc d-flex justify-content-between p-1 height-chat-active">
-                            <div class="d-flex">
-                                <img :src="elements.avatar" alt="">
-                                <div class="d-flex flex-column">
-                                    <h2 class="mb-0 fs-4">{{elements.name}}</h2>
-                                    <span class="text-mess-mc">Ultimo messaggio inviato</span>
+                    <div class="col mb-auto p-0 chat-group-mc d-flex flex-column overflow-y-scroll">
+                            <div v-for="(elements,index) in contacts" class="col chat-active border-chat-mc d-flex justify-content-between p-1">
+                                <div class="d-flex">
+                                    <img :src="elements.avatar" alt="">
+                                    <div class="d-flex flex-column">
+                                        <h2 class="mb-0 fs-4">{{elements.name}}</h2>
+                                        <span class="text-mess-mc">Ultimo messaggio inviato</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="time-mess-mc">12:00</span>
                                 </div>
                             </div>
-                            <div>
-                                <span class="time-mess-mc">12:00</span>
-                            </div>
-                        </div>
-                        <!-- <div class="col d-flex border-chat-mc justify-content-between p-1 height-chat-active">
-                            <div class="d-flex">
-                                <img src="./img/elonmusk_afp.jpeg" alt="">
-                                <div class="d-flex flex-column">
-                                    <h2 class="mb-0 fs-4">Elon</h2>
-                                    <span class="text-mess-mc">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="time-mess-mc">12:00</span>
-                            </div>
-                        </div>
-                        <div class="d-flex border-chat-mc justify-content-between p-1 height-chat-active">
-                            <div class="d-flex">
-                                <img src="./img/Steve_Jobs_Headshot_2010-CROP2.jpeg" alt="">
-                                <div class="d-flex flex-column">
-                                    <h2 class="mb-0 fs-4">Steve</h2>
-                                    <span class="text-mess-mc">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="time-mess-mc">12:00</span>
-                            </div>
-                        </div>
-                        <div class="col d-flex border-chat-mc justify-content-between p-1 height-chat-active">
-                            <div class="d-flex">
-                                <img src="./img/warren-buffett.jpeg" alt="">
-                                <div class="d-flex flex-column">
-                                    <h2 class="mb-0 fs-4">Warren</h2>
-                                    <span class="text-mess-mc">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="time-mess-mc">12:00</span>
-                            </div>
-                        </div>
-                        <div class="col d-flex border-chat-mc justify-content-between p-1 height-chat-active">
-                            <div class="d-flex">
-                                <img src="./img/zuckerberg-scaled.jpeg" alt="">
-                                <div class="d-flex flex-column">
-                                    <h2 class="mb-0 fs-4">Mark</h2>
-                                    <span class="text-mess-mc">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="time-mess-mc">12:00</span>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
