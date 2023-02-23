@@ -38,22 +38,22 @@
                     </div>
                     <div class="col height-chat-active search-mc p-2">
                         <div class="input-group">
-                            <i class="fa-solid fa-magnifying-glass input-group-text "></i>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                                <i class="fa-solid fa-magnifying-glass input-group-text"></i>
+                             <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                                 aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="col mb-auto p-0 chat-group-mc d-flex flex-column overflow-y-scroll">
-                            <div v-for="(elements,index) in contacts" class="col chat-active border-chat-mc d-flex justify-content-between p-1">
+                            <div @click="setCurrentUser(i)" v-for="(elements,i) in contacts" class="col border-chat-mc d-flex justify-content-between p-1">
                                 <div class="d-flex">
                                     <img :src="elements.avatar" alt="">
                                     <div class="d-flex flex-column">
                                         <h2 class="mb-0 fs-4">{{elements.name}}</h2>
-                                        <span class="text-mess-mc">Ultimo messaggio inviato</span>
+                                        <span class="text-mess-mc">{{elements.messages[firstMessage].message}}</span>
                                     </div>
                                 </div>
                                 <div>
-                                    <span class="time-mess-mc">12:00</span>
+                                    <span class="time-mess-mc">{{elements.messages[firstMessage].date.split(' ')[1].split(':').splice(0,2).join(':')}}</span>
                                 </div>
                             </div>
                     </div>
@@ -81,21 +81,10 @@
                     </div>
                     <div class="col mb-auto bg-mc overflow-y-scroll">
                         <div class="row flex-column pt-5 g-3">
-                            <div class="col d-flex justify-content-end">
-                                <div class="bg-pill-user d-flex justify-content-between ">
-                                    <span class="lh-lg">Hai portato a spasso il cane ?</span>
-                                    <span class="d-flex align-items-end time-mess-chat-mc"> 15:30</span>
-                                 </div>
-                            </div>
-                            <div class="col d-flex  justify-content-end">
-                                <div class="bg-pill-user d-flex justify-content-between ">
-                                    <span class="lh-lg">Ricordati di stendere i panni </span>
-                                    <span class="d-flex align-items-end time-mess-chat-mc"> 15:50</span>
-                                 </div>                            </div>
-                            <div class="col d-flex justify-content-start"> 
-                                <div class="bg-pill-other d-flex justify-content-between ">
-                                    <span class="lh-lg">Tutto fatto !</span>
-                                    <span class="d-flex align-items-end time-mess-chat-mc"> 16:15</span>
+                            <div v-for="(elements,i) in contacts[currentUser].messages" :class="(elements.status === 'received')? 'justify-content-start': 'justify-content-end'" class="col d-flex ">
+                                <div :class="(elements.status === 'received')? 'bg-pill-other': 'bg-pill-user'" class="d-flex position-relative">
+                                    <span class="lh-lg margin-chat">{{elements.message}}</span>
+                                    <span class="d-flex align-items-end time-mess-chat-mc position-absolute bottom-0 end-0 p-1">{{elements.date.split(' ')[1].split(':').splice(0,2).join(':')}}</span>
                                  </div>
                             </div>
                         </div>  
