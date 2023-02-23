@@ -154,6 +154,9 @@ img{
 .margin-chat{
     margin: 0 10px;
 }
+.margin-chat::first-letter{
+    text-transform: capitalize;
+}
 
 
 /* SEZIONE PER SCRIVERE  */
