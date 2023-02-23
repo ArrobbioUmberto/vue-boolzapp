@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="col mb-auto p-0 chat-group-mc d-flex flex-column overflow-y-scroll">
-                            <div @click="setCurrentUser(i)" v-for="(elements,i) in contacts" class="col border-chat-mc d-flex justify-content-between p-1">
+                            <div @click="setCurrentUser(i)" v-for="(elements,i) in contacts" :class="(currentUser === i)? 'active' : ''" class="col border-chat-mc d-flex justify-content-between p-1">
                                 <div class="d-flex">
                                     <img :src="elements.avatar" alt="">
                                     <div class="d-flex flex-column">
@@ -92,7 +92,7 @@
                     <div class="col height-chat-active write-mc p-3 d-flex align-items-center">
                         <i class="fa-regular fa-face-smile"></i>
                         <div class="input-group">
-                            <input @keyup.enter="addMessage" v-model="inputValue" type="text" class="form-control" placeholder="Scrivi un messaggio"
+                            <input @keyup.enter="addMessage(), responseMessage()" v-model="inputValue" type="text" class="form-control" placeholder="Scrivi un messaggio"
                                 aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <i class="fa-solid fa-microphone"></i>
