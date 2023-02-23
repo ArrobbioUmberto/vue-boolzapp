@@ -99,6 +99,10 @@ img{
 .border-chat-mc{
     border-top:  1px solid #e9ebeb;
 }
+.border-chat-mc:hover,
+.border-chat-mc.active{
+    background-color: #e9ebeb;
+}
 .time-mess-mc{
     font-size: 13px;
     color:#c5ccd8 ;
