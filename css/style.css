@@ -17,7 +17,7 @@ body{
     padding: 20px;
 }
 .height-mc {
-    height: calc(100% - 40px);
+    height: 80vh
 }
 .col-8 .height-chat-active,
 .col-4 .height-chat-active,
@@ -29,6 +29,7 @@ body{
 .user-mc{
     background-color:#eaeaea;
     border-right: 1px solid black;
+    height: 100px;
 }
 img{
     aspect-ratio: 1/1;
@@ -50,6 +51,7 @@ img{
 .row .news-mc{
     background-color: #8edafc;
     padding: 15px 0;
+    height: 100px;
 }
 .news-mc i{
     background-color: white;
@@ -73,6 +75,7 @@ img{
 
 .search-mc{
     background-color: white;
+    height: 80px;
 }
 .search-mc i{
     padding: 10px;
@@ -82,6 +85,7 @@ img{
 /* SEZIONE GRUPPO DI CHAT  */
 .chat-group-mc{
    background-color: white;
+   height: calc(100% - 280px);
 }
 .chat-active{
     background-color: #e9ebeb;
