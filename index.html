@@ -43,12 +43,12 @@
                                 aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
-                    <div class="col mb-auto p-0 chat-group-mc d-flex flex-column">
-                        <div class="col chat-active border-chat-mc d-flex justify-content-between p-1 height-chat-active">
+                    <div class="col mb-auto p-0 chat-group-mc d-flex flex-column overflow-y-scroll flex-grow-1">
+                        <div v-for="(elements,index) in contacts" class="col chat-active border-chat-mc d-flex justify-content-between p-1 height-chat-active">
                             <div class="d-flex">
-                                <img src="./img/gates.jpeg" alt="">
+                                <img :src="elements.avatar" alt="">
                                 <div class="d-flex flex-column">
-                                    <h2 class="mb-0 fs-4">Bill</h2>
+                                    <h2 class="mb-0 fs-4">{{elements.name}}</h2>
                                     <span class="text-mess-mc">Ultimo messaggio inviato</span>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                 <span class="time-mess-mc">12:00</span>
                             </div>
                         </div>
-                        <div class="col d-flex border-chat-mc justify-content-between p-1 height-chat-active">
+                        <!-- <div class="col d-flex border-chat-mc justify-content-between p-1 height-chat-active">
                             <div class="d-flex">
                                 <img src="./img/elonmusk_afp.jpeg" alt="">
                                 <div class="d-flex flex-column">
@@ -103,7 +103,7 @@
                             <div>
                                 <span class="time-mess-mc">12:00</span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col mb-auto bg-mc">
+                    <div class="col mb-auto bg-mc overflow-y-scroll">
                         <div class="row flex-column pt-5 g-3">
                             <div class="col d-flex justify-content-end">
                                 <div class="bg-pill-user d-flex justify-content-between ">
@@ -146,11 +146,7 @@
                                     <span class="d-flex align-items-end time-mess-chat-mc"> 16:15</span>
                                  </div>
                             </div>
-                            
-                        </div>
-                        
-                        
-                       
+                        </div>  
                     </div>
                     <div class="col height-chat-active write-mc p-3 d-flex align-items-center">
                         <i class="fa-regular fa-face-smile"></i>
