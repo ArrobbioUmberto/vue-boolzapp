@@ -39,11 +39,11 @@
                     <div class="col height-chat-active search-mc p-2">
                         <div class="input-group">
                             <i class="fa-solid fa-magnifying-glass input-group-text"></i>
-                             <input @keyup.enter="findPerson()" v-model="findValue" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                             <input @keyup.enter="findPerson(findValue)" v-model="findValue" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="col mb-auto p-0 chat-group-mc d-flex flex-column overflow-y-scroll">
-                            <div @click="setCurrentUser(i)" v-for="(elements,i) in contacts" :class="(currentUser === i)? 'active' : ''" class="col border-chat-mc d-flex justify-content-between p-1">
+                            <div @click="setCurrentUser(i)" v-for="(elements,i) in contacts" :class="(currentUser === i)? 'active' : '', (utenteTrovato === true)? 'd-none' : ''" class="col border-chat-mc d-flex justify-content-between p-1">
                                 <div class="d-flex">
                                     <img :src="elements.avatar" alt="">
                                     <div class="d-flex flex-column">
@@ -64,9 +64,9 @@
                         <div class="row">
                             <div class="col active-user p-2 d-flex justify-content-between align-items-center">
                                 <div class="d-flex">
-                                    <img src="./img/elonmusk_afp.jpeg" alt="">
+                                    <img :src="contacts[currentUser].avatar" alt="">
                                     <div class="d-flex flex-column">
-                                        <span> Elon</span>
+                                        <span class="fs-4">{{contacts[currentUser].name}}</span>
                                         <span class="text-active-mess-mc">Ultimo accesso oggi alle 12:00</span>
                                     </div>
                                 </div>
