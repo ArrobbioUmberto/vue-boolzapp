@@ -1,10 +1,5 @@
 console.log('ciao')
 
-
-
-
-
-const { createApp } = Vue
 const contacts = [
   {
     name: 'Michele',
@@ -230,11 +225,19 @@ const contacts = [
   }
 ]
 
+const arrayMessaggi = contacts.map((el)=>{
+  return el.messages.length-1
+})
+console.log(arrayMessaggi)
+
+
+
+const {createApp} = Vue
+
 createApp({
   data() {
     return {
       currentUser: 0,
-      firstMessage: 0,
       contacts: [
         {
           name: 'Michele',
@@ -459,13 +462,15 @@ createApp({
           ],
         }
       ],
+      lastMessage: arrayMessaggi,
+      firstMessage: 0,
       inputValue: '',
       findValue: '',
       response: 'ok!',
       utenteTrovato: null,
+      
     }
-
-  },
+},
   methods: {
     findPerson(findValue){
       let nomeInserito = this.findValue.trim()
@@ -475,8 +480,8 @@ createApp({
       console.log(findValue)
       this.contacts.forEach(contact => {
         // console.log(contact.name)
-        if(contact.name !== findValue){
-          console.log('sono diversi', contact.name, findValue)
+        if(!contact.name.includes(this.newValue)){
+          console.log('sono diversi', contact.name, this.newValue)
           this.utenteTrovato = true
         } else {
           console.log('sono uguali', contact.name, findValue)
@@ -520,6 +525,5 @@ createApp({
       }, 1000)
 
     }
-  }
+  },
 }).mount('#app')
-
