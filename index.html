@@ -11,6 +11,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/c5d4023dee.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script> -->
 </head>
 
 <body>
@@ -39,22 +40,26 @@
                     <div class="col height-chat-active search-mc p-2">
                         <div class="input-group">
                             <i class="fa-solid fa-magnifying-glass input-group-text"></i>
-                             <input @keyup.enter="findPerson(findValue)" v-model="findValue" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                            <input @keyup="findPerson(findValue)" v-model="findValue" type="text"
+                                class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username"
+                                aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="col mb-auto p-0 chat-group-mc d-flex flex-column overflow-y-scroll">
-                            <div @click="setCurrentUser(i)" v-for="(elements,i) in contacts" :class="(currentUser === i)? 'active' : '', (utenteTrovato === true)? 'd-none' : ''" class="col border-chat-mc d-flex justify-content-between p-1">
-                                <div class="d-flex">
-                                    <img :src="elements.avatar" alt="">
-                                    <div class="d-flex flex-column">
-                                        <h2 class="mb-0 fs-4">{{elements.name}}</h2>
-                                        <span class="text-mess-mc">{{elements.messages[firstMessage].message}}</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="time-mess-mc">{{elements.messages[firstMessage].date.split(' ')[1].split(':').splice(0,2).join(':')}}</span>
+                        <div @click="setCurrentUser(i)" v-for="(elements,i) in contacts"
+                            :class="(currentUser === i)? 'active' : '', (utenteTrovato === true)? 'd-none' : ''"
+                            class="col border-chat-mc d-flex justify-content-between p-1">
+                            <div class="d-flex">
+                                <img :src="elements.avatar" alt="">
+                                <div class="d-flex flex-column">
+                                    <h2 class="mb-0 fs-4">{{elements.name}}</h2>
+                                    <span class="text-mess-mc">{{elements.messages[firstMessage].message}}</span>
                                 </div>
                             </div>
+                            <div>
+                                <span class="time-mess-mc">{{elements.messages[firstMessage].date.split(' ')[1].split(':').splice(0,2).join(':')}}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,19 +85,24 @@
                     </div>
                     <div class="col mb-auto bg-mc overflow-y-scroll">
                         <div class="row flex-column pt-5 g-3">
-                            <div v-for="(elements,i) in contacts[currentUser].messages" :class="(elements.status === 'received')? 'justify-content-start': 'justify-content-end'" class="col d-flex ">
-                                <div :class="(elements.status === 'received')? 'bg-pill-other': 'bg-pill-user'" class="d-flex position-relative">
+                            <div v-for="(elements,i) in contacts[currentUser].messages"
+                                :class="(elements.status === 'received')? 'justify-content-start': 'justify-content-end'"
+                                class="col d-flex ">
+                                <div :class="(elements.status === 'received')? 'bg-pill-other': 'bg-pill-user'"
+                                    class="d-flex position-relative">
                                     <span class="lh-lg margin-chat">{{elements.message}}</span>
-                                    <span class="d-flex align-items-end time-mess-chat-mc position-absolute bottom-0 end-0 p-1">{{elements.date.split(' ')[1].split(':').splice(0,2).join(':')}}</span>
-                                 </div>
+                                    <span
+                                        class="d-flex align-items-end time-mess-chat-mc position-absolute bottom-0 end-0 p-1">{{elements.date.split(' ')[1].split(':').splice(0,2).join(':')}}</span>
+                                </div>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                     <div class="col height-chat-active write-mc p-3 d-flex align-items-center">
                         <i class="fa-regular fa-face-smile"></i>
                         <div class="input-group">
-                            <input @keyup.enter="addMessage(), responseMessage()" v-model="inputValue" type="text" class="form-control" placeholder="Scrivi un messaggio"
-                                aria-label="Username" aria-describedby="basic-addon1">
+                            <input @keyup.enter="addMessage(), responseMessage()" v-model="inputValue" type="text"
+                                class="form-control" placeholder="Scrivi un messaggio" aria-label="Username"
+                                aria-describedby="basic-addon1">
                         </div>
                         <i class="fa-solid fa-microphone"></i>
                     </div>
@@ -101,6 +111,7 @@
         </div>
     </div>
     <script src="./js/app.js"></script>
+
 </body>
 
 </html>
