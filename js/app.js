@@ -467,28 +467,24 @@ createApp({
       inputValue: '',
       findValue: '',
       response: 'ok!',
-      utenteTrovato: null,
+      searchTerm: '',
       
     }
 },
+computed: {
+  filteredContacts() {
+    if (this.searchTerm) {
+      const searchTermLowerCase = this.searchTerm.toLowerCase();
+      return this.contacts.filter(contact =>
+        contact.name.toLowerCase().startsWith(searchTermLowerCase)
+      )
+      this.searchTerm = ''
+    } else {
+      return this.contacts;
+    }
+  }
+},
   methods: {
-    findPerson(){
-      let nomeInserito = this.findValue.trim()
-      if (nomeInserito=== '') {
-        return
-      }
-      console.log(findValue)
-      this.contacts.forEach(contact => {
-        console.log(contact.name)
-        if(!contact.name.includes(this.newValue)){
-          console.log('sono diversi', contact.name, this.newValue)
-          this.utenteTrovato = true
-        } else {
-          console.log('sono uguali', contact.name, findValue)
-          this.utenteTrovato = false
-        }
-      })
-    },
     setCurrentUser(current) {
       this.currentUser = current
       // console.log(this.setCurrentUser)
