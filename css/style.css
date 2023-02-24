@@ -161,6 +161,22 @@ img{
 .margin-chat::first-letter{
     text-transform: capitalize;
 }
+.dropdown .button-mc{
+    border: none;
+    color: grey;
+    background: transparent;
+    font-size: 17px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    padding: 0;
+}
+.dropdown .button-mc:hover,
+.dropdown .button-mc:active{
+    background-color: transparent;
+    color: grey;
+}
+
 
 
 /* SEZIONE PER SCRIVERE  */
