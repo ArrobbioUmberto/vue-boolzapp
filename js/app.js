@@ -472,14 +472,14 @@ createApp({
     }
 },
   methods: {
-    findPerson(findValue){
+    findPerson(){
       let nomeInserito = this.findValue.trim()
       if (nomeInserito=== '') {
         return
       }
       console.log(findValue)
       this.contacts.forEach(contact => {
-        // console.log(contact.name)
+        console.log(contact.name)
         if(!contact.name.includes(this.newValue)){
           console.log('sono diversi', contact.name, this.newValue)
           this.utenteTrovato = true
@@ -525,5 +525,6 @@ createApp({
       }, 1000)
 
     }
+    
   },
 }).mount('#app')
