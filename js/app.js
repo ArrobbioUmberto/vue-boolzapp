@@ -234,6 +234,12 @@ console.log(arrayMessaggi)
 
 const {createApp} = Vue
 
+
+// const {DateTime} = luxon
+
+
+
+
 createApp({
   data() {
     return {
@@ -465,9 +471,9 @@ createApp({
       lastMessage: arrayMessaggi,
       firstMessage: 0,
       inputValue: '',
-      findValue: '',
       response: 'ok!',
       searchTerm: '',
+      
       
     }
 },
@@ -485,8 +491,20 @@ computed: {
   }
 },
   methods: {
+    // isHidden(contact) {
+		// 	const name = contact.name.toLowerCase()
+		// 	const search = this.searchTerm.trim().toLowerCase()
+
+		// 	const result = name.includes(search)
+		// 	console.log(name, search, result)
+
+		// 	return result
+		// 	// return true || false
+		// },
     setCurrentUser(current) {
       this.currentUser = current
+      this.inputValue = ''
+      // in questo modo ogni volta che cambio chat e ho lasciato qualcosa scritto nella chat qiest'utlima si resetta e non me lo porto ingiro 
       // console.log(this.setCurrentUser)
     },
     addMessage() {
@@ -495,6 +513,7 @@ computed: {
       if (messaggioInserito === '') {
         return
       }
+      const date = this.getDateAsString('dd/LL/yyyy HH:mm:ss')
       let newMessage = {
         date: '10/01/2020 16:15:22',
         message: this.inputValue,
@@ -520,7 +539,17 @@ computed: {
         
       }, 1000)
 
-    }
+    },
+    // getDateAsString(format) {
+    //   const now = DateTime.now()
+    //   if(!format){
+    //     format = 'dd/LL/yyyy'
+    //   }
+    //   return now.toFormat(format)
+    // }
+    // removeMessage(){
+    //   let messaggioEliminare =
+    // }
     
   },
 }).mount('#app')
