@@ -87,11 +87,11 @@
                                 <div :class="(elements.status === 'received')? 'bg-pill-other': 'bg-pill-user'"
                                     class="d-flex position-relative dropdown ">
                                     <span class="lh-lg margin-chat">{{elements.message}}</span>
-                                    <button class="btn btn-secondary dropdown-toggle button-mc" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn dropdown-toggle button-mc" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Info Message</a></li>
-                                        <li><a class="dropdown-item" href="#">Delete Message</a></li>
+                                        <li @click="removeMessage()"><a class="dropdown-item" href="#">Delete Message</a></li>
                                     </ul>
                                     <span
                                         class="d-flex align-items-end time-mess-chat-mc position-absolute bottom-0 end-0 p-1">{{elements.date.split(' ')[1].split(':').splice(0,2).join(':')}}</span>
