@@ -85,7 +85,7 @@ const contacts = [
     ],
   },
   {
-    name: 'Alessandro L.',
+    name: 'Marco L.',
     avatar: './img/zuckerberg-scaled.jpeg',
     visible: true,
     messages: [
@@ -120,23 +120,6 @@ const contacts = [
         date: '10/01/2020 15:51:00',
         message: 'Nessuna nuova, buona nuova',
         status: 'sent'
-      }
-    ],
-  },
-  {
-    name: 'Federico',
-    avatar: './img/gates.jpeg',
-    visible: true,
-    messages: [
-      {
-        date: '10/01/2020 15:30:55',
-        message: 'Fai gli auguri a Martina che è il suo compleanno!',
-        status: 'sent'
-      },
-      {
-        date: '10/01/2020 15:50:00',
-        message: 'Grazie per avermelo ricordato, le scrivo subito!',
-        status: 'received'
       }
     ],
   },
@@ -225,14 +208,14 @@ const contacts = [
   }
 ]
 
-const arrayMessaggi = contacts.map((el)=>{
-  return el.messages.length-1
+const arrayMessaggi = contacts.map((el) => {
+  return el.messages.length - 1
 })
-console.log(arrayMessaggi)
+// console.log(arrayMessaggi)
 
 
 
-const {createApp} = Vue
+const { createApp } = Vue
 
 
 // const {DateTime} = luxon
@@ -368,23 +351,6 @@ createApp({
           ],
         },
         {
-          name: 'Federico',
-          avatar: './img/gates.jpeg',
-          visible: true,
-          messages: [
-            {
-              date: '10/01/2020 15:30:55',
-              message: 'Fai gli auguri a Martina che è il suo compleanno!',
-              status: 'sent'
-            },
-            {
-              date: '10/01/2020 15:50:00',
-              message: 'Grazie per avermelo ricordato, le scrivo subito!',
-              status: 'received'
-            }
-          ],
-        },
-        {
           name: 'Davide',
           avatar: './img/warren-buffett.jpeg',
           visible: true,
@@ -429,23 +395,6 @@ createApp({
           ],
         },
         {
-          name: 'Federico',
-          avatar: './img/gates.jpeg',
-          visible: true,
-          messages: [
-            {
-              date: '10/01/2020 15:30:55',
-              message: 'Fai gli auguri a Martina che è il suo compleanno!',
-              status: 'sent'
-            },
-            {
-              date: '10/01/2020 15:50:00',
-              message: 'Grazie per avermelo ricordato, le scrivo subito!',
-              status: 'received'
-            }
-          ],
-        },
-        {
           name: 'Davide',
           avatar: './img/warren-buffett.jpeg',
           visible: true,
@@ -473,34 +422,23 @@ createApp({
       inputValue: '',
       response: 'ok!',
       searchTerm: '',
-      
-      
     }
-},
-computed: {
-  filteredContacts() {
-    if (this.searchTerm) {
-      const searchTermLowerCase = this.searchTerm.toLowerCase();
-      return this.contacts.filter(contact =>
-        contact.name.toLowerCase().startsWith(searchTermLowerCase)
-      )
-      this.searchTerm = ''
-    } else {
-      return this.contacts;
+  },
+  computed: {
+    filteredContacts() {
+      if (this.searchTerm) {
+        const searchTermLowerCase = this.searchTerm.toLowerCase();
+        console.log('searchTerm:', searchTermLowerCase);
+        console.log('filteredContacts:', this.contacts.filter(contact => contact.name.toLowerCase().startsWith(searchTermLowerCase)));
+        return this.contacts.filter(contact =>
+          contact.name.toLowerCase().includes(searchTermLowerCase)
+        )
+      } else {
+        return this.contacts;
+      }
     }
-  }
-},
+  },
   methods: {
-    // isHidden(contact) {
-		// 	const name = contact.name.toLowerCase()
-		// 	const search = this.searchTerm.trim().toLowerCase()
-
-		// 	const result = name.includes(search)
-		// 	console.log(name, search, result)
-
-		// 	return result
-		// 	// return true || false
-		// },
     setCurrentUser(current) {
       this.currentUser = current
       this.inputValue = ''
@@ -520,7 +458,7 @@ computed: {
         status: 'sent',
       }
       // console.log(newMessage)
-        this.contacts[this.currentUser].messages.push(newMessage)
+      this.contacts[this.currentUser].messages.push(newMessage)
       this.inputValue = ''
       // console.log('messaggio inviato:', messaggioInserito)
       // console.log(this.contacts)
@@ -535,21 +473,19 @@ computed: {
           status: 'received',
         }
         // console.log(standardMessage)
-          this.contacts[this.currentUser].messages.push(standardMessage)
-        
+        this.contacts[this.currentUser].messages.push(standardMessage)
+
       }, 1000)
 
     },
-    // getDateAsString(format) {
-    //   const now = DateTime.now()
-    //   if(!format){
-    //     format = 'dd/LL/yyyy'
-    //   }
-    //   return now.toFormat(format)
-    // }
-    // removeMessage(){
-    //   let messaggioEliminare =
-    // }
-    
+    deleteMessage(index) {
+      // console.log(index)
+      // console.log(elements)
+      // this.contacts[this.currentUser]
+      console.log(this.contacts[this.currentUser].messages[index])
+      // this.contacts[this.currentUser].messages.splice(inde
+      // this.contacts[messaggioCorrente].messages.splice(index,1)
+    },
+
   },
 }).mount('#app')
